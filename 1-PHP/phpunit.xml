@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit colors="true" strict="true">
+    <testsuites>
+        <testsuite name="Euclidean Sum Test" bootstrap="vendor/autoload.php">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
