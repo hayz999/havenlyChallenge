@@ -36,22 +36,20 @@ class Mather
      */
     public function setCurrentValueToPowerOf(int $exponent)
     {
-        // Takes the current value of this object
-        // And Takes it to the Value of the power
-        // For example. If the current value is 2
-        // and you pass 2, it should set the new value to 4
+        $valueToPower = (pow($value, $exponent));
+        // int to the power of $exponent stored in a variable
+        // pass that variable to splitCurrentValueIntoArray
+        splitCurrentValueIntoArray($valueToPower);
     }
 
     /**
      * @return array
      */
-    public function splitCurrentValueIntoArray()
+    public function splitCurrentValueIntoArray($value)
     {
-        // Returns an array of integers for each integer in the current value
-        // For example, if the current value is 22, this will return [2, 2]
-
-
-        // This is a placeholder, should be changed.
+        $array = str_split($value);
+        // number is split into individual numbers in an array
+        sumOfArray($array);
         return [];
     }
 
@@ -61,10 +59,14 @@ class Mather
      */
     public function sumOfArray(array $ints)
     {
-        // Takes an array of integers and returns the sum of all of the parts
-        // Ex. If passed [2, 2] returns 4;
-
-        // This is a placeholder, should be changed.
-        return 0;
+        // loop through array and sum each number to a total variable which should start at 0 
+        $total = 0;
+        foreach ($ints as $number) {
+            $total += $number;
+        };
+        return $total;
     }
 }
+
+
+// used video series from this website to get an understanding of php: https://laracasts.com/skills/php 
