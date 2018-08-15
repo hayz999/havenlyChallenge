@@ -9,9 +9,9 @@ class Mather
     /**
      * @param int $startingValue
      */
-    public function __construct(
-        int $startingValue
-    ) {
+
+    public function __construct(int $startingValue) 
+    {
         $this->value = $startingValue;
     }
 
@@ -36,21 +36,17 @@ class Mather
      */
     public function setCurrentValueToPowerOf(int $exponent)
     {
-        $valueToPower = (pow($value, $exponent));
-        // int to the power of $exponent stored in a variable
-        // pass that variable to splitCurrentValueIntoArray
-        splitCurrentValueIntoArray($valueToPower);
+        $valueToPower = (pow($this->value, $exponent));
+        return $valueToPower;
     }
 
     /**
      * @return array
      */
-    public function splitCurrentValueIntoArray($value)
+    public function splitCurrentValueIntoArray(int $valueToPower)
     {
-        $array = str_split($value);
-        // number is split into individual numbers in an array
-        sumOfArray($array);
-        return [];
+        $ints = str_split($valueToPower);
+        return $ints;
     }
 
     /**
@@ -59,10 +55,10 @@ class Mather
      */
     public function sumOfArray(array $ints)
     {
-        // loop through array and sum each number to a total variable which should start at 0 
         $total = 0;
         foreach ($ints as $number) {
             $total += $number;
+            echo $total;
         };
         return $total;
     }
