@@ -36,15 +36,17 @@ class Mather
      */
     public function setCurrentValueToPowerOf(int $exponent)
     {
-        $valueToPower = (pow($this->value, $exponent));
-        return $valueToPower;
+       $this->value = $this->value ** $exponent;
     }
 
     /**
      * @return array
      */
-    public function splitCurrentValueIntoArray(int $valueToPower)
+    public function splitCurrentValueIntoArray(int $valueToPower = null)
     {
+        if($valueToPower == null) {
+            $valueToPower = $this->value;
+        }
         $ints = str_split($valueToPower);
         return $ints;
     }
