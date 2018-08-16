@@ -44,7 +44,8 @@ class Mather
      */
     public function splitCurrentValueIntoArray(int $valueToPower = null)
     {
-        if($valueToPower == null) {
+        if($valueToPower == null) 
+        {
             $valueToPower = $this->value;
         }
         $ints = str_split($valueToPower);
